@@ -1,0 +1,202 @@
+/* General Styling */
+body {
+    margin: 0;
+    padding: 20px 0px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 0px;
+    background: linear-gradient(to right, #4a90e2, #0052cc);
+    color: white;
+    text-align: center;
+}
+
+.hero2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0px;
+    margin: 0px;
+    background: linear-gradient(to right, #4a90e2, #0052cc);
+    color: white;
+    text-align: center;
+}
+
+.hero-logo {
+    max-width: 200px; /* Adjust the size of the logo */
+    margin-top: -10px;
+    margin-bottom: -50px; /* Spacing between the title and logo */
+}
+
+.hero h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.hero .btn {
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.hero .btn:hover {
+    background-color: #e65b50;
+}
+
+
+/* About Section */
+#about {
+    padding: 40px 0px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* Services Section */
+#services {
+    padding: 40px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+#services h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.features div {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.features div:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.features i {
+    font-size: 40px;
+    color: #4a90e2;
+    margin-bottom: 15px;
+}
+
+.features h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.features p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Investor Section */
+#investor {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f4f6f9;
+}
+
+#investor h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#investor p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+#investor ul {
+    text-align: left;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 800px;
+    list-style-type: none;
+}
+
+#investor ul li {
+    font-size: 16px;
+    color: #333;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+#investor ul li:last-child {
+    border-bottom: none;
+}
+
+#investor .btn {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#investor .btn:hover {
+    background-color: #0052cc;
+}
+
+/* Utility Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}

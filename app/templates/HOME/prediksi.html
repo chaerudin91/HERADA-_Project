@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Survei - Prediksi Kesehatan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/predict.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('main.home') }}" class="logo">
+                <img src="{{ url_for('static', filename='image/LOGO.png') }}" alt="Logo" class="logo-img">
+                HERADA
+            </a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('main.home') }}"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="{{ url_for('main.survey') }}"><i class="fas fa-cogs"></i> Tes Kesehatan</a></li>
+                <li><a href="{{ url_for('main.prediksi') }}"><i class="fas fa-heartbeat"></i> Prediksi Kesehatan</a></li>
+                <li><a href="{{ url_for('main.chat') }}"><i class="fas fa-comments"></i> Chat Bot</a></li>
+                <li><a href="{{ url_for('main.konsultasi') }}"><i class="fas fa-phone-alt"></i> Konsultasi</a></li>
+                <li><a href="{{ url_for('main.logout') }}" class="btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Container -->
+    <div class="container">
+        <h1>Prediksi Kesehatan</h1>
+        <form id="predictionForm">
+            <div class="form-group">
+                <label for="snoring_rate">Snoring Rate:</label>
+                <input type="number" id="snoring_rate" name="snoring_rate" step="any" required>
+            </div>
+            <div class="form-group">
+                <label for="respiration_rate">Respiration Rate:</label>
+                <input type="number" id="respiration_rate" name="respiration_rate" step="any" required>
+            </div>
+            <div class="form-group">
+                <label for="body_temperature">Body Temperature:</label>
+                <input type="number" id="body_temperature" name="body_temperature" step="any" required>
+            </div>
+            <div class="form-group">
+                <label for="limb_movement">Limb Movement:</label>
+                <input type="number" id="limb_movement" name="limb_movement" step="any" required>
+            </div>
+            <div class="form-group">
+                <label for="blood_oxygen">Blood Oxygen:</label>
+                <input type="number" id="blood_oxygen" name="blood_oxygen" step="any" required>
+            </div>
+            <div class="form-group">
+                <label for="eye_movement">Eye Movement:</label>
+                <input type="number" id="eye_movement" name="eye_movement" step="any" required>
+            </div>
+            <div class="form-group">
+                <label for="sleeping_hours">Sleeping Hours:</label>
+                <input type="number" id="sleeping_hours" name="sleeping_hours" step="any" required>
+            </div>
+            <div class="form-group">
+                <label for="heart_rate">Heart Rate:</label>
+                <input type="number" id="heart_rate" name="heart_rate" step="any" required>
+            </div>
+            <button type="submit" class="submit-btn">Prediksi</button>
+        </form>
+
+        <!-- Result Display -->
+        <div id="result" class="result">
+            <p id="loadingMessage" style="display:none;">Memproses data...</p>
+            <p id="predictionMessage"></p>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+        document.getElementById('predictionForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            // Get form data and prepare it to send as JSON
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = parseFloat(value);
+            });
+
+            // Show loading message
+            document.getElementById('loadingMessage').style.display = 'block';
+            document.getElementById('predictionMessage').innerText = '';
+
+            try {
+                // Send data to server for prediction
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                // Hide loading message
+                document.getElementById('loadingMessage').style.display = 'none';
+
+                if (response.ok) {
+                    // Display prediction result
+                    const result = await response.json();
+                    const stressLevel = result.stress_level;
+
+                    let resultText = '';
+                    if (stressLevel === 1) {
+                        resultText = 'Tingkat Stres: 4 (Sangat Tinggi)';
+                    } else if (stressLevel === 2) {
+                        resultText = 'Tingkat Stres: 3 (Tinggi)';
+                    } else if (stressLevel === 3) {
+                        resultText = 'Tingkat Stres: 2 (Sedang)';
+                    } else {
+                        resultText = 'Tingkat Stres: 1 (Rendah)';
+                    }
+
+                    document.getElementById('predictionMessage').innerText = resultText;
+                } else {
+                    const error = await response.json();
+                    document.getElementById('predictionMessage').innerText = `Error: ${error.error}`;
+                }
+            } catch (error) {
+                document.getElementById('loadingMessage').style.display = 'none';
+                document.getElementById('predictionMessage').innerText = `Request failed: ${error.message}`;
+            }
+        });
+    </script>
+</body>
+</html>

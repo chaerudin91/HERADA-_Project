@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konsultasi Psikolog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/konsultasi.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('main.home') }}" class="logo">
+                <img src="{{ url_for('static', filename='image/LOGO.png') }}" alt="Logo" class="logo-img">
+                HERADA
+            </a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('main.home') }}"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="{{ url_for('main.survey') }}"><i class="fas fa-cogs"></i> Tes Kesehatan</a></li>
+                <li><a href="{{ url_for('main.prediksi') }}"><i class="fas fa-heartbeat"></i> Prediksi Kesehatan</a></li>
+                <li><a href="{{ url_for('main.chat') }}"><i class="fas fa-comments"></i> Chat Bot</a></li>
+                <li><a href="{{ url_for('main.konsultasi') }}"><i class="fas fa-phone-alt"></i> Konsultasi</a></li>
+                <li><a href="{{ url_for('main.logout') }}" class="btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Konten Utama -->
+    <div class="container">
+        <h1>Temukan Psikolog Terbaik Untuk Anda</h1>
+        <p class="intro-text">Di bawah ini adalah daftar psikolog yang siap membantu Anda. Klik tombol "Order" untuk memulai konsultasi.</p>
+
+        <div class="psychologist-cards">
+            {% for psychologist in psychologists %}
+            <div class="card">
+                <img src="{{ url_for('static', filename='image/images (1).jpeg') }}" alt="Profile Picture" class="profile-img">
+                <h3>{{ psychologist.name }}</h3>
+                <p><strong>Spesialisasi:</strong> {{ psychologist.specialization }}</p>
+                <p><strong>Jam Tersedia:</strong> {{ psychologist.available_hours }}</p>
+                <!-- Tombol Order yang mengarahkan ke WhatsApp -->
+                <a href="https://wa.me/{{ psychologist.phone_number }}?text=Halo,%20saya%20ingin%20melakukan%20konsultasi%20dengan%20Anda." class="btn-order">Order Konsultasi</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+</html>

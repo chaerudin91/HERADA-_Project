@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HERADA - Kesehatan Mental Anda Prioritas Kami</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/berita.css') }}">
+
+    <!-- FontAwesome CDN for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('main.index') }}" class="logo">
+                <img src="{{ url_for('static', filename='image/LOGO.png') }}" alt="Logo" class="logo-img">
+                HERADA
+            </a>
+            <div class="burger" onclick="toggleNavbar()">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="/"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
+                <li><a href="/berita"><i class="fas fa-cogs"></i> Berita</a></li>
+                <li><a href="/komunitas"><i class="fas fa-users"></i> Komunitas</a></li>
+                <li><a href="#contact"><i class="fas fa-phone-alt"></i> Kontak</a></li>
+                <li><a href="/login" class="btn"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+            </ul>
+        </div>
+    </header>
+
+<!-- Edukasi Section -->
+<section id="edukasi" class="edukasi-section">
+    <h2>Edukasi Kesehatan Mental</h2>
+    <div class="edukasi-content">
+        <!-- Apa Itu Kesehatan Mental -->
+        <article>
+            <h3>Apa Itu Kesehatan Mental?</h3>
+            <p>
+                Kesehatan mental adalah kondisi di mana seseorang merasa sejahtera secara psikologis, dapat mengelola emosi, 
+                menghadapi tekanan hidup, bekerja dengan produktif, dan berkontribusi pada komunitas. 
+                Kesehatan mental bukan hanya tentang mengatasi gangguan, tetapi juga menjaga keseimbangan emosi dan mental.
+            </p>
+        </article>
+
+        <!-- Gejala Gangguan Kesehatan Mental -->
+        <article>
+            <h3>Gejala Gangguan Kesehatan Mental</h3>
+            <ul>
+                <li>Perasaan cemas yang berlebihan</li>
+                <li>Perubahan suasana hati yang mendalam</li>
+                <li>Kesulitan dalam berkonsentrasi</li>
+                <li>Pola tidur yang terganggu (terlalu banyak atau sedikit tidur)</li>
+                <li>Kehilangan minat pada aktivitas yang biasanya disukai</li>
+            </ul>
+        </article>
+
+        <!-- Cara Mengelola Stres -->
+        <article>
+            <h3>Cara Mengelola Stres</h3>
+            <p>
+                Stres adalah reaksi tubuh terhadap tantangan. Untuk mengelola stres dengan lebih baik, ada beberapa cara yang bisa dilakukan:
+            </p>
+            <ul>
+                <li>Melakukan relaksasi, seperti meditasi atau pernapasan dalam</li>
+                <li>Menjaga pola makan yang sehat</li>
+                <li>Berolahraga secara teratur</li>
+                <li>Mencari dukungan dari teman, keluarga, atau seorang profesional</li>
+            </ul>
+        </article>
+
+        <!-- Membantu Teman atau Keluarga dengan Masalah Mental -->
+        <article>
+            <h3>Bagaimana Membantu Teman atau Keluarga dengan Masalah Mental?</h3>
+            <p>
+                Jika Anda melihat tanda-tanda masalah kesehatan mental pada teman atau keluarga, langkah pertama adalah mendengarkan 
+                mereka tanpa menghakimi. Dorong mereka untuk mencari bantuan dari seorang profesional dan beri dukungan emosional.
+            </p>
+        </article>
+    </div>
+</section>
+<!-- Berita Section -->
+<section id="berita" class="berita-section">
+    <h1>Berita Terkini tentang Kesehatan Mental</h1>
+    <div class="berita-container">
+        <div class="news-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Logo_ITB_2023.svg/800px-Logo_ITB_2023.svg.png" alt="ITB Logo" class="news-logo">
+            <a href="https://jabar.tribunnews.com/2024/11/20/itb-sebut-banyak-faktor-mahasiswa-alami-masalah-kesehatan-mental" target="_blank">
+                <div class="news-content">
+                    <h2>ITB Sebut Banyak Faktor Mahasiswa Alami Masalah Kesehatan Mental</h2>
+                    <p class="news-summary">Baca lebih lanjut mengenai masalah kesehatan mental yang dihadapi mahasiswa di ITB.</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="news-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Kompas_Gramedia_Logo.svg/1200px-Kompas_Gramedia_Logo.svg.png" alt="Kompas Logo" class="news-logo">
+            <a href="https://regional.kompas.com/read/2024/11/22/053802478/gangguan-kesehatan-mental-di-tempat-kerja-meningkat-penyebab-dan-cara" target="_blank">
+                <div class="news-content">
+                    <h2>Gangguan Kesehatan Mental di Tempat Kerja Meningkat: Penyebab dan Cara Menghadapinya</h2>
+                    <p class="news-summary">Mengapa gangguan kesehatan mental semakin meningkat di tempat kerja? Temukan solusinya.</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="news-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Liputan6_logo.svg/1280px-Liputan6_logo.svg.png" alt="Liputan6 Logo" class="news-logo">
+            <a href="https://www.liputan6.com/pemilu/read/5798530/soroti-kesehatan-mental-ridwan-kamil-suswono-bakal-kuatkan-fasilitas-konseling-di-puskesmas-dan-rumah-sakit" target="_blank">
+                <div class="news-content">
+                    <h2>Soroti Kesehatan Mental, Ridwan Kamil Suswono Bakal Kuatkan Fasilitas Konseling di Puskesmas dan Rumah Sakit</h2>
+                    <p class="news-summary">Pentingnya fasilitas konseling dalam menangani masalah kesehatan mental di puskesmas dan rumah sakit.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+</body>
+</html>

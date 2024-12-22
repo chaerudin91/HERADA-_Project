@@ -1,0 +1,124 @@
+/* Edukasi Section */
+.edukasi-section {
+    padding: 0px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.edukasi-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.edukasi-content article {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: left;
+}
+
+/* Berita Section */
+.berita-section {
+    padding: 40px 20px;
+    background-color: #f0f8ff;
+    text-align: center;
+}
+
+.berita-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.news-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 15px;
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.news-logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.news-content {
+    text-align: left;
+}
+
+.news-item h2 {
+    font-size: 1.2rem;
+    color: #0056b3;
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.news-item h2:hover {
+    color: #003366;
+}
+
+.news-summary {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 0;
+    font-style: italic;
+}
+
+
+    
+
+
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .news-item {
+        width: 100%;
+    }
+
+    .news-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .nav-links.mobile.active {
+        display: flex;
+        flex-direction: column;
+        background-color: #4a90e2;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .edukasi-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}

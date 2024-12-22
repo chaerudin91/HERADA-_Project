@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HERADA - Kesehatan Mental Anda Prioritas Kami</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/komunitas.css') }}">
+   
+    <!-- FontAwesome CDN for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('main.index') }}" class="logo">
+                <img src="{{ url_for('static', filename='image/LOGO.png') }}" alt="Logo" class="logo-img">
+                HERADA
+            </a>
+            <div class="burger" onclick="toggleNavbar()">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="/"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
+                <li><a href="/berita"><i class="fas fa-cogs"></i> Berita</a></li>
+                <li><a href="/komunitas"><i class="fas fa-users"></i> Komunitas</a></li>
+                <li><a href="#contact"><i class="fas fa-phone-alt"></i> Kontak</a></li>
+                <li><a href="/login" class="btn"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Komunitas Section -->
+    <section id="komunitas" class="komunitas-section">
+        <h1>Gabung dengan Komunitas Kami</h1>
+        <p>Temukan komunitas yang mendukung kesehatan mental dan berbagi pengalaman dengan orang-orang yang peduli.</p>
+
+        <div class="komunitas-container">
+            <!-- Komunitas 1 -->
+            <div class="komunitas-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/WhatsApp_icon_%282013-2018%29.svg/1024px-WhatsApp_icon_%282013-2018%29.svg.png" alt="WhatsApp Icon" class="komunitas-logo">
+                <div class="komunitas-info">
+                    <h3>Komunitas Kesehatan Mental Remaja</h3>
+                    <p>Komunitas untuk remaja yang ingin saling berbagi pengalaman mengenai kesehatan mental.</p>
+                    <a href="https://wa.me/1234567890" class="komunitas-btn" target="_blank">Gabung WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Komunitas 2 -->
+            <div class="komunitas-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/WhatsApp_icon_%282013-2018%29.svg/1024px-WhatsApp_icon_%282013-2018%29.svg.png" alt="WhatsApp Icon" class="komunitas-logo">
+                <div class="komunitas-info">
+                    <h3>Komunitas Profesional & Kesehatan Mental</h3>
+                    <p>Komunitas bagi profesional yang ingin mendiskusikan masalah kesehatan mental di tempat kerja.</p>
+                    <a href="https://wa.me/0987654321" class="komunitas-btn" target="_blank">Gabung WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Komunitas 3 -->
+            <div class="komunitas-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/WhatsApp_icon_%282013-2018%29.svg/1024px-WhatsApp_icon_%282013-2018%29.svg.png" alt="WhatsApp Icon" class="komunitas-logo">
+                <div class="komunitas-info">
+                    <h3>Komunitas Keluarga Peduli Kesehatan Mental</h3>
+                    <p>Komunitas untuk keluarga yang ingin mendukung anggota keluarga dengan masalah kesehatan mental.</p>
+                    <a href="https://wa.me/1122334455" class="komunitas-btn" target="_blank">Gabung WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,128 @@
+/* Navbar styles */
+.navbar {
+    background-color: #4a90e2;
+    color: white;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 9999;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Container for navbar */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    padding: 0 20px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Logo with image styling */
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+/* Navbar links styling */
+.nav-links {
+    list-style: none;
+    display: flex; /* Default display for larger screens */
+    gap: 10px;
+    margin: 0;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    background-color: #0052cc;
+    color: #e0e0e0;
+}
+
+/* Ensure content is not hidden behind the navbar */
+body {
+    padding-top: 80px;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide links by default */
+        flex-direction: column;
+        background-color: #4a90e2;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        z-index: 999;
+    }
+
+    /* Show links when active class is added */
+    .nav-links.mobile.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger on smaller screens */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1100;
+    }
+}
+
+/* Hamburger button styling */
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 4px 0;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger open animation */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-6px);
+}

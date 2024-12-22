@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Login Container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh; /* Adjust to ensure the content is centered vertically */
+    padding-top: 0px; /* Adjust padding top for responsiveness */
+}
+
+.login-box {
+    background-color: #4a90e2;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.login-box h2 {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.logo-img1 {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.login-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-box input {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: border-color 0.3s ease;
+    width: 100%;
+}
+
+.login-box input:focus {
+    border-color: #000000;
+    outline: none;
+}
+
+.login-box button {
+    background-color: #6fa4e0;
+    color: rgb(255, 255, 255);
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.login-box button:hover {
+    background-color: #6fa4e0;
+}
+
+.login-box p {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.login-box p a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.login-box p a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .login-box {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    .login-box input {
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    .login-box button {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo-img {
+        width: 50px;
+        height: 50px;
+    }
+}
