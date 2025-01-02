@@ -1,0 +1,80 @@
+/* Komunitas Section */
+.komunitas-section {
+    padding: 10px 20px;
+    background-color: #f0f8ff;
+    text-align: center;
+}
+
+.komunitas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.komunitas-item {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 15px;
+}
+
+.komunitas-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.komunitas-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.komunitas-info {
+    text-align: left;
+}
+
+.komunitas-item h3 {
+    font-size: 1.2rem;
+    color: #0056b3;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.komunitas-item p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.komunitas-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #25d366;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.komunitas-btn:hover {
+    background-color: #128c7e;
+}
+
+@media screen and (max-width: 768px) {
+    .komunitas-item {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .komunitas-logo {
+        width: 40px;
+        height: 40px;
+    }
+}

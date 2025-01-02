@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HERADA - Kesehatan Mental Anda Prioritas Kami</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+       
+        <!-- FontAwesome CDN for icons -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Navbar -->
+        <header class="navbar">
+            <div class="nav-container">
+                <a href="{{ url_for('main.home') }}" class="logo">
+                    <img src="{{ url_for('static', filename='image/LOGO.png') }}" alt="Logo" class="logo-img">
+                    HERADA
+                </a>
+                <ul class="nav-links">
+                    <li><a href="{{ url_for('main.home') }}"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="{{ url_for('main.survey') }}"><i class="fas fa-cogs"></i> Tes Kesehatan</a></li>
+                    <li><a href="{{ url_for('main.prediksi') }}"><i class="fas fa-heartbeat"></i> Prediksi Kesehatan</a></li>
+                    <li><a href="{{ url_for('main.chat') }}"><i class="fas fa-comments"></i> Chat Bot</a></li>
+                    <li><a href="{{ url_for('main.konsultasi') }}"><i class="fas fa-phone-alt"></i> Konsultasi</a></li>
+                    <li><a href="{{ url_for('main.logout') }}" class="btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </div>
+        </header>
+<body>
+    <div class="chat-container">
+        <h1>Chatbot HERADA</h1>
+
+        <!-- Chat Box -->
+        <div class="chat-box">
+            {% for message in messages %}
+                <div class="chat-message {{ 'user' if message.sender == 'user' else 'bot' }}">
+                    <p>{{ message.text }}</p>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Chat Input Form -->
+        <form method="POST" action="/chat" onsubmit="scrollToBottom()">
+            <textarea name="user_message" placeholder="Ketik pesan Anda di sini..." required></textarea>
+            <button type="submit">Kirim</button>
+        </form>
+
+        <!-- Clear Chat Form -->
+        <form method="POST" action="/clear_chat">
+            <button type="submit" class="clear-chat-btn">Clear Chat</button>
+        </form>
+    </div>
+<script>
+    // Scroll otomatis ke bagian bawah ketika halaman dimuat
+    function scrollToBottom() {
+        const chatBox = document.querySelector('.chat-box');
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    // Jalankan fungsi setelah semua elemen halaman selesai dimuat
+    window.onload = scrollToBottom;
+</script>
+</body>
+</html>
